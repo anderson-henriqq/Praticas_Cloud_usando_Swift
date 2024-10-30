@@ -40,24 +40,39 @@ struct ContentView: View {
             
             VStack{
                 
-                Text("Calculadora de IMC")
+                Text("Calculadora de IMC").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 
                 TextField("Peso", value: $peso, format: .number)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
+                    .padding()
                     .keyboardType(.decimalPad)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .frame(width: 350)
+                    //.background(Color(.systemGray6))
+                    
                 
                 TextField("Altura", value: $altura, format: .number)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
+                    .padding()
                     .keyboardType(.decimalPad)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .frame(width: 350)
                 
-            
+                Button("Calcular"){
+                       calcular()
+                    }
+                    .frame(width: 100,height: 50)
+                    .background(Color.blue)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
                 
-                Button("Calcular") {
-                    
-                   calcular()
-                }
+                Spacer()
                 
                 Text(cor)
+                
+                //Text(String(imc))
                 
                 Spacer()
                 
