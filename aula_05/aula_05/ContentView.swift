@@ -25,7 +25,11 @@ struct ContentView: View {
                         .foregroundStyle(Color.white)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .padding(.trailing, 250)
-                    
+                    Text("Hackasong")
+                        .foregroundStyle(Color.white)
+                        .padding(.trailing, 290)
+                        .font(.footnote)
+                        .padding(.bottom,10)
                     
                     VStack{
                         ForEach(arrayMusicas){e in
@@ -35,6 +39,7 @@ struct ContentView: View {
                                     image
                                         .resizable()
                                         .frame(width: 58, height: 50)
+                                        .padding(.leading,8)
                                 } placeholder: {}
                                 
                                 VStack{
@@ -42,16 +47,23 @@ struct ContentView: View {
                                         .foregroundStyle(Color.white)
                                         .font(.title3)
                                         .bold()
+                                        //.padding(.leading, 1)
                                     Text(e.artist)
                                         .foregroundStyle(Color.white)
                                         .font(.footnote)
+                                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                        //.padding(.trailing, 50)
                                 }
                                 
-                                Image(systemName: "ellipsis").foregroundColor(.white)
+                                Spacer()
+                                
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(.white)
+                                    .padding(.trailing, 5)
                                 
                             }
                         }
-                    }
+                    }.multilineTextAlignment(.leading)
                 
                     
                     Spacer()
